@@ -1,7 +1,14 @@
-<h1>Delete</h1>
+{% extends 'static/tasks/base.html' %}
+
+{% block body %}
+<h4>Delete</h4>
 <p> Are you sure you want to delete this task ?</p>
-<a href='{% url 'list' %}'>cancel</a>
-<form method='POST' action=''>
-    {% csrf_token %}
-    <input type='submit' name='Confirm' value='delete'>
-</form>
+<div class="d-flex flex-wrap justify-content-center">
+    <button type="button" class="btn btn-outline-success m-2"><a class=".text-dark"
+            href='{% url 'list' %}'>cancel</a></button>
+    <form method='POST' action=''>
+        {% csrf_token %}
+        <button type="submit" class="btn btn-outline-danger m-2">Delete</button>
+    </form>
+</div>
+{% endblock body %}

@@ -1,14 +1,21 @@
-<h1>To Do</h1>
-
-    <form method='POST' action='/'>
-        {% csrf_token %}
-        {{form.title}}
-        <input type='submit' name='createTask' value='add task'>
+{% extends 'static/tasks/base.html' %}
+{% block body %}
+<form method='POST' action='/' class="mb-3">
+    {% csrf_token %}
+    {{form.title}}
     </from>
-{% for task in tasks %}
-    <div>
-        {{ task }} ||
-        <a href='{% url 'update' task.id %}'>update</a> ||
-        <a href='{% url 'delete' task.id %}'>delete</a> ||
+    {% for task in tasks %}
+    <hr>
+    <div class="text-justify mt-2 d-flex mt-3">
+        {% if task.done %}
+        <strike>{{ task }}</strike>
+        {% else %}
+        {{ task }}
+        {% endif %}
+        <div class="ml-auto btn-group btn-group-sm">
+            <a class=".text-dark btn btn-outline-success" href='{% url 'update' task.id %}'>update</a>
+            <a class=".text-dark btn btn-outline-danger" href='{% url 'delete' task.id %}'>delete</a></button>
+        </div>
     </div>
-{% endfor %}
+    {% endfor %}
+    {% endblock body %}

@@ -1,6 +1,9 @@
-<h1>update</h1>
+{% extends 'static/tasks/base.html' %}
+{% block body %}
+<h4>update</h4>
 <form method='POST' action=''>
     {% csrf_token %}
     {{form}}
-    <input type='submit' name='update'>
+    <button type="submit" class="btn btn-outline-success m-2">Update</button>
 </form>
+{% endblock body %}
