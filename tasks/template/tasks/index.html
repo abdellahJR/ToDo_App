@@ -1,4 +1,4 @@
-{% extends 'static/tasks/base.html' %}
+{% extends 'tasks/layouts/base.html' %}
 {% block body %}
 <form method='POST' action='/' class="mb-3">
     {% csrf_token %}
@@ -8,9 +8,9 @@
     <hr>
     <div class="text-justify mt-2 d-flex mt-3">
         {% if task.done %}
-        <strike>{{ task }}</strike>
+        <strike class="w-75 p-2">{{ task }}</strike>
         {% else %}
-        {{ task }}
+        <p class="w-75 p-2 mb-0" id="p">{{ task }}</p>
         {% endif %}
         <div class="ml-auto btn-group btn-group-sm">
             <a class=".text-dark btn btn-outline-success" href='{% url 'update' task.id %}'>update</a>

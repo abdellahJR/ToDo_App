@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" defer>
   </script>
@@ -20,13 +23,15 @@
   </title>
 </head>
 
-<body class="w-50 mx-auto text-center mt-3">
-  {% include 'static/tasks/nav.html' %}
+<body class="w-75 mx-auto text-center mt-3">
+  <nav>
+    {% include 'tasks/layouts/nav.html' %}
+  </nav>
   <div class="p-3 border border-dark border mx-auto rounded">
     {% block body %}
     {% endblock body %}
   </div>
-  {% include 'static/tasks/footer.html' %}
+  {% include 'tasks/layouts/footer.html' %}
 </body>
 
 </html>

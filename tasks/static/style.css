@@ -1,0 +1,22 @@
+nav {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+input {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: azure;
+}
+
+strike:hover {
+    background-color: #5cb85c;
+}
+
+#p:hover {
+    background-color: #d9534f;
+}
+
+footer {
+    background-color: azure;
+}
